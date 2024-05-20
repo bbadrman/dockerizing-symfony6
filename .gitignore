@@ -17,4 +17,4 @@
 /db/
 
 # Ignore the local configuration
-/local/
+# /local/

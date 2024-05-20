@@ -3,7 +3,7 @@ services:
   web:
     build: ./
     ports:
-      - "80:80"
+      - "82:80"
     depends_on:
       - db
     expose:
@@ -15,7 +15,6 @@ services:
     networks:
       - test_network
 
-
   db:
     image: mysql
     ports:
@@ -25,12 +24,11 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
       MYSQL_USER: 123456
-      MYSQL_PASSWORD: yassine
+      MYSQL_PASSWORD: badr
     volumes:
       - "./db:/var/lib/mysql"
     networks:
       - test_network
-
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -43,7 +41,6 @@ services:
       - db
     networks:
       - test_network
-
 
 networks:
   test_network:
